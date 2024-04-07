@@ -11,11 +11,11 @@ export default function HomeScreen({ navigation }) {
     </View>
      <View>
      <TextInput style = {styles.user} placeholder={'Utilisateur'}/>
-     <TextInput style = {styles.password} placeholder={'Mot de passe'}/>
+     <TextInput style = {styles.password} placeholder={'Mot de passe'} secureTextEntry={true}/>
      </View>
      <View style = {styles.buttons}>
     <TouchableOpacity style = {styles.signIn} onPress={() => navigation.navigate('Profile')}><Text style = {styles.signInText}>Connexion</Text></TouchableOpacity>
-    <TouchableOpacity style = {styles.signUp}><Text style = {styles.signUpText}>Inscription</Text></TouchableOpacity>
+    <TouchableOpacity style = {styles.signUp}  onPress={() => navigation.navigate('SignUp')}><Text style = {styles.signUpText}>Inscription</Text></TouchableOpacity>
        
      </View>
    </View>
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 50,
         color: '#084364',
+        
        
     },
 
@@ -46,6 +47,8 @@ const styles = StyleSheet.create({
         height: 50,
         width: 250,
         marginBottom: 30, 
+        textAlign: 'center',
+        fontSize: 36,
     },
 
     password: {
@@ -55,6 +58,8 @@ const styles = StyleSheet.create({
         borderRadius: 10, 
         height: 50,
         width: 250,
+        textAlign: 'center',
+        fontSize: 36,
     },
 
 
