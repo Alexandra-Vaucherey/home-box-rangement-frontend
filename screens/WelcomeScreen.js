@@ -21,8 +21,8 @@ export default function ProfileScreen({ navigation }) {
       <FontAwesome name='plus' size={30} color={'#084364'}/>
      </TouchableOpacity>
      <Button
-       title="Go to Home"
-       onPress={() => navigation.navigate('Home')}
+       title="Go to Dashboard"
+       onPress={() => navigation.navigate('Dashboard')}
      />
    </View>
  );
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         width: 270,
         textAlign: 'center',
+        elevation: 40,
 
     },
 

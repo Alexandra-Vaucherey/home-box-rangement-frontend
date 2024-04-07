@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 50,
         color: '#084364',
-        
+        elevation: 40,
        
     },
 

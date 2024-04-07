@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         width: 160,
         textAlign: 'center',
+        elevation: 40,
     },
     
     text: {
