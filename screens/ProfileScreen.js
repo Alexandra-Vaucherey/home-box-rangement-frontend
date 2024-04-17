@@ -1,17 +1,24 @@
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 //import CheckBox from '@react-native-community/checkbox';
 import { useState } from 'react';
+import { RadioButton } from 'react-native-paper';
 
 export default function ProfileScreen({ navigation }) {
-  const [isSelected, setIsSelected] = useState(false);
+  const [checked, setChecked] = useState(false);
  return (
    <View style= {styles.container}>
      <Text style= {styles.title}>Profil</Text>
      <View>
      <Text style= {styles.text}>Téléphone</Text>
      <Text style= {styles.text}>Email</Text>
+     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+     <RadioButton/>   
      <Text style ={styles.warning}>Notifications de péremption</Text>
+     </View>
+     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <RadioButton/>
      <Text style ={styles.warning}>Notifications de contrôle</Text>
+     </View>
      <Text style= {styles.dark}>Mode sombre</Text>
      </View>
      <TouchableOpacity style = {styles.passwordChange}><Text style={styles.password}>Changer mot de passe</Text></TouchableOpacity>
