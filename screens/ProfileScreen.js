@@ -4,7 +4,23 @@ import { useState } from 'react';
 import { RadioButton } from 'react-native-paper';
 
 export default function ProfileScreen({ navigation }) {
-  const [checked, setChecked] = useState(false);
+  const [notificationsChecked, setNotificationsChecked] = useState(false);
+  const [controlsChecked, setControlsChecked] = useState(false);
+  const [darkModeChecked, setDarkModeChecked] = useState(false);
+  
+
+  const handleNotificationsChange = () => {
+    setNotificationsChecked(!notificationsChecked);
+  };
+
+  const handleControlsChange = () => {
+    setControlsChecked(!controlsChecked);
+  };
+
+  const handleDarkModeChange = () => {
+    setDarkModeChecked(!darkModeChecked)
+  };
+
  return (
    <View style= {styles.container}>
      <Text style= {styles.title}>Profil</Text>
@@ -12,14 +28,17 @@ export default function ProfileScreen({ navigation }) {
      <Text style= {styles.text}>Téléphone</Text>
      <Text style= {styles.text}>Email</Text>
      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-     <RadioButton/>   
+     <RadioButton  value="notifications" status={ notificationsChecked ? 'checked' : 'unchecked' } onPress={() => handleNotificationsChange('notifications')}/>   
      <Text style ={styles.warning}>Notifications de péremption</Text>
      </View>
      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-      <RadioButton/>
+      <RadioButton  value="controls" status={ controlsChecked ? 'checked' : 'unchecked' } onPress={() => handleControlsChange('controls')}/>
      <Text style ={styles.warning}>Notifications de contrôle</Text>
      </View>
+     <View style={{ flexDirection: 'row', alignItems: 'center'}}>
+     <RadioButton  value="darkMode" status={ darkModeChecked ? 'checked' : 'unchecked' } onPress={() => handleDarkModeChange('darkMode')}/>
      <Text style= {styles.dark}>Mode sombre</Text>
+     </View>
      </View>
      <TouchableOpacity style = {styles.passwordChange}><Text style={styles.password}>Changer mot de passe</Text></TouchableOpacity>
      <Button
@@ -51,15 +70,18 @@ const styles = StyleSheet.create({
     
     text: {
       color: '#084364',
-
+      marginLeft: 35,
+      fontSize: 20,
     },
 
     warning: {
       color: '#084364',
+      fontSize: 20,
     },
 
     dark: {
       color: '#084364',
+      fontSize: 20,
     },
 
     passwordChange: {
@@ -73,7 +95,7 @@ const styles = StyleSheet.create({
 
     password: {
       textAlign: 'center',
-      fontSize: 22,
+      fontSize: 26,
     }
   });
   
