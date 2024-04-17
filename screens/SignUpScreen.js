@@ -14,7 +14,7 @@ export default function SignUpScreen() {
   const [passwordCheck, setPasswordCheck] = useState('');
 
   const handleSubmit = () => { 
-    fetch("http://192.168.15.116:19000/users/signup", {
+    fetch("https://bkr93ro-anonymous-8081.exp.direct/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -34,7 +34,8 @@ export default function SignUpScreen() {
     setEmail('');
     setPassword('');
     setPasswordCheck('');
-    if(username && phone && email && password && confirmPassword){
+    console.log(username, phone, password, email, passwordCheck)
+    if(username && phone && email && password && passwordCheck){
       navigation.navigate('Profile')     
     }else{
     alert('Merci de remplir tous les champs')
